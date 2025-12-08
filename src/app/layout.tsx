@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "../components/left-navbar/navbar";
+import TopNavbar from "../components/topnavbar";
 import { ThemeProvider } from "@/context/ThemeContext";
 
 const geistSans = Geist({
@@ -26,6 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
           <ThemeProvider>
+             <TopNavbar />
         <Sidebar />
         <main className="ml-16">{children}</main> {/* leave space for sidebar */}
           </ThemeProvider>

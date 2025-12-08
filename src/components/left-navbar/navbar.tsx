@@ -13,9 +13,8 @@ const Sidebar: React.FC = () => {
   const [isMetaOpen, setMetaOpen] = useState(false);
   const [isFeedbackOpen, setFeedbackOpen] = useState(false);
 
-  
   const { theme } = useThemeContext();
-  const isDark = theme === "dark";
+  const isDark = theme === "dark" || theme === "system";
 
   const getIcon = (name: string, active: boolean) => {
     return active
@@ -44,9 +43,13 @@ const Sidebar: React.FC = () => {
         onClose={() => setFeedbackOpen(false)}
       />
 
-      <div className="fixed left-0 top-0 bottom-0 w-16 bg-neutral-900 flex flex-col justify-between items-center py-2">
-
-       
+     
+      <div
+        className={`
+          fixed left-0 top-14 bottom-0 w-16 flex flex-col justify-between items-center py-2
+          ${isDark ? "bg-neutral-900 border-neutral-700" : "bg-neutral-100 border-neutral-300"}
+        `}
+      >
         <div className="flex flex-col space-y-2">
           {navItems.map((item) => {
             const active = pathname === item.href;
@@ -56,24 +59,41 @@ const Sidebar: React.FC = () => {
               <Link key={item.href} href={item.href} className="group relative">
                 <div
                   className={`flex justify-center items-center w-10 h-10 rounded-full transition-colors
-                  ${active ? "bg-neutral-700/50" : "hover:bg-neutral-700/50"}`}
+                    ${
+                      active
+                        ? isDark
+                          ? "bg-neutral-700/50"
+                          : "bg-neutral-300/70"
+                        : isDark
+                        ? "hover:bg-neutral-700/50"
+                        : "hover:bg-neutral-300/50"
+                    }
+                  `}
                 >
-                  <Image src={iconPath} width={22} height={22} alt={item.label} />
+                  <Image src={iconPath} width={20} height={20} alt={item.label} />
                 </div>
 
-                <span className="absolute left-full ml-1 whitespace-nowrap hidden group-hover:block bg-gray-50 text-neutral-800 text-[10px] px-1.5 py-0.5 rounded shadow -mt-7">
+                <span
+                  className={`absolute left-full ml-1 whitespace-nowrap hidden group-hover:block
+                    text-[10px] px-1.5 py-0.5 rounded shadow
+                    ${isDark ? "bg-white text-neutral-900" : "bg-neutral-900 text-white"}
+                    -mt-7
+                  `}
+                >
                   {item.label}
                 </span>
               </Link>
             );
           })}
 
-          <hr className="border-neutral-700 w-full my-2" />
+          <hr className={`${isDark ? "border-neutral-700" : "border-neutral-300"} w-full my-2`} />
 
-      
           <button
             onClick={() => setMetaOpen(true)}
-            className="group relative flex justify-center items-center w-10 h-10 rounded-full hover:bg-neutral-700/50 transition-colors"
+            className={`
+              group relative flex justify-center items-center w-10 h-10 rounded-full transition-colors
+              ${isDark ? "hover:bg-neutral-700/50" : "hover:bg-neutral-300/50"}
+            `}
           >
             <Image
               src="https://brandlogos.net/wp-content/uploads/2025/08/meta_ai-logo_brandlogos.net_xjwry-512x504.png"
@@ -83,26 +103,36 @@ const Sidebar: React.FC = () => {
               unoptimized
             />
 
-            <span className="absolute left-full ml-1 whitespace-nowrap hidden group-hover:block bg-gray-50 text-neutral-800 text-[10px] px-1.5 py-0.5 rounded shadow">
+            <span
+              className={`absolute left-full ml-1 whitespace-nowrap hidden group-hover:block text-[10px] px-1.5 py-0.5 rounded shadow
+                ${isDark ? "bg-white text-neutral-900" : "bg-neutral-900 text-white"}
+              `}
+            >
               Meta AI
             </span>
           </button>
         </div>
 
-        
         <div className="flex flex-col space-y-2">
           <button
             onClick={() => setFeedbackOpen(true)}
-            className="group relative flex justify-center items-center w-10 h-10 rounded-full hover:bg-neutral-700/50 transition-colors"
+            className={`
+              group relative flex justify-center items-center w-10 h-10 rounded-full transition-colors
+              ${isDark ? "hover:bg-neutral-700/50" : "hover:bg-neutral-300/50"}
+            `}
           >
             <Image
               src="/assets/icons/feedback.png"
-              width={24}
-              height={24}
+              width={20}
+              height={20}
               alt="Feedback"
             />
 
-            <span className="absolute left-full ml-1 whitespace-nowrap hidden group-hover:block bg-gray-50 text-neutral-800 text-[10px] px-1.5 py-0.5 rounded shadow">
+            <span
+              className={`absolute left-full ml-1 whitespace-nowrap hidden group-hover:block text-[10px] px-1.5 py-0.5 rounded shadow
+                ${isDark ? "bg-white text-neutral-900" : "bg-neutral-900 text-white"}
+              `}
+            >
               Send Feedback
             </span>
           </button>
@@ -119,12 +149,25 @@ const Sidebar: React.FC = () => {
               >
                 <div
                   className={`flex justify-center items-center w-full h-full rounded-full
-                    ${active ? "bg-neutral-700/50" : "hover:bg-neutral-700/50"}`}
+                    ${
+                      active
+                        ? isDark
+                          ? "bg-neutral-700/50"
+                          : "bg-neutral-300/70"
+                        : isDark
+                        ? "hover:bg-neutral-700/50"
+                        : "hover:bg-neutral-300/50"
+                    }
+                  `}
                 >
-                  <Image src={iconPath} width={24} height={24} alt={item.label} />
+                  <Image src={iconPath} width={20} height={20} alt={item.label} />
                 </div>
 
-                <span className="absolute left-full ml-1 whitespace-nowrap hidden group-hover:block bg-gray-50 text-neutral-800 text-[10px] px-1.5 py-0.5 rounded shadow">
+                <span
+                  className={`absolute left-full ml-1 whitespace-nowrap hidden group-hover:block text-[10px] px-1.5 py-0.5 rounded shadow
+                    ${isDark ? "bg-white text-neutral-900" : "bg-neutral-900 text-white"}
+                  `}
+                >
                   {item.label}
                 </span>
               </Link>
