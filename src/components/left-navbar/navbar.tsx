@@ -46,7 +46,7 @@ const Sidebar: React.FC = () => {
      
       <div
         className={`
-          fixed left-0 top-14 bottom-0 w-16 flex flex-col justify-between items-center py-2
+          fixed left-0 top-14 bottom-0 w-16 flex flex-col justify-between items-center py-2 z-10
           ${isDark ? "bg-neutral-900 border-neutral-700" : "bg-neutral-100 border-neutral-300"}
         `}
       >
@@ -75,7 +75,7 @@ const Sidebar: React.FC = () => {
 
                 <span
                   className={`absolute left-full ml-1 whitespace-nowrap hidden group-hover:block
-                    text-[10px] px-1.5 py-0.5 rounded shadow
+                    text-[13px] px-1.5 py-0.5 rounded shadow 
                     ${isDark ? "bg-white text-neutral-900" : "bg-neutral-900 text-white"}
                     -mt-7
                   `}
@@ -104,7 +104,7 @@ const Sidebar: React.FC = () => {
             />
 
             <span
-              className={`absolute left-full ml-1 whitespace-nowrap hidden group-hover:block text-[10px] px-1.5 py-0.5 rounded shadow
+              className={`absolute left-full ml-1 whitespace-nowrap hidden group-hover:block text-[13px] px-1.5 py-0.5 rounded shadow
                 ${isDark ? "bg-white text-neutral-900" : "bg-neutral-900 text-white"}
               `}
             >
@@ -129,7 +129,7 @@ const Sidebar: React.FC = () => {
             />
 
             <span
-              className={`absolute left-full ml-1 whitespace-nowrap hidden group-hover:block text-[10px] px-1.5 py-0.5 rounded shadow
+              className={`absolute left-full ml-1 whitespace-nowrap hidden group-hover:block text-[13px] px-1.5 py-0.5 rounded shadow
                 ${isDark ? "bg-white text-neutral-900" : "bg-neutral-900 text-white"}
               `}
             >
@@ -164,7 +164,7 @@ const Sidebar: React.FC = () => {
                 </div>
 
                 <span
-                  className={`absolute left-full ml-1 whitespace-nowrap hidden group-hover:block text-[10px] px-1.5 py-0.5 rounded shadow
+                  className={`absolute left-full ml-1 whitespace-nowrap hidden group-hover:block text-[13px] px-1.5 py-0.5 rounded shadow
                     ${isDark ? "bg-white text-neutral-900" : "bg-neutral-900 text-white"}
                   `}
                 >
