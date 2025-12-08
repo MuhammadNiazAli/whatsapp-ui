@@ -13,7 +13,7 @@ const Sidebar: React.FC = () => {
   const [isMetaOpen, setMetaOpen] = useState(false);
   const [isFeedbackOpen, setFeedbackOpen] = useState(false);
 
-  //  Theme context
+  
   const { theme } = useThemeContext();
   const isDark = theme === "dark";
 
@@ -70,7 +70,7 @@ const Sidebar: React.FC = () => {
 
           <hr className="border-neutral-700 w-full my-2" />
 
-          {/* Meta AI Button */}
+      
           <button
             onClick={() => setMetaOpen(true)}
             className="group relative flex justify-center items-center w-10 h-10 rounded-full hover:bg-neutral-700/50 transition-colors"
@@ -89,7 +89,7 @@ const Sidebar: React.FC = () => {
           </button>
         </div>
 
-        {/* Bottom Navigation */}
+        
         <div className="flex flex-col space-y-2">
           <button
             onClick={() => setFeedbackOpen(true)}
