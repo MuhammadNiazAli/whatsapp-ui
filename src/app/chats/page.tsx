@@ -7,7 +7,7 @@ const Page = () => {
       className="
         w-full
         h-[calc(100vh-3.5rem)]
-        border-t border-l border-neutral-700/70
+        border-t border-l border-neutral-700
         rounded-tl-[5px]
         overflow-hidden
         mt-14

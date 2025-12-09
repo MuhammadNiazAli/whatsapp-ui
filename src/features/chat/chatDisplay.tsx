@@ -49,7 +49,7 @@ const Chatview = () => {
       {/* Resizer */}
       <div
         ref={resizerRef}
-        className="w-1 cursor-col-resize bg-transparent hover:bg-white/20 transition-all"
+        className="w-2 cursor-col-resize bg-transparent -mt-14 hover:bg-white/20 transition-all"
         onMouseDown={startDrag}
       ></div>
 

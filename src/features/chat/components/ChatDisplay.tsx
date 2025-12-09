@@ -5,7 +5,6 @@ const ChatDisplay = () => {
     <div
       className="
         w-full 
-        border-l border-neutral-700/50
         overflow-hidden
         h-full
         -mt-14

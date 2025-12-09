@@ -5,7 +5,7 @@ const Chatsidebar = () => {
   const friends = ["Alice", "Bob", "Charlie", "David", "Eve"];
 
   return (
-    <div className="p-2 bg-neutral-950 h-screen">
+    <div className="p-2 bg-neutral-950 h-screen  border-r border-neutral-700/50">
       {friends.map((friend) => (
         <div
           key={friend}
